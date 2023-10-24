@@ -2,24 +2,21 @@ package com.test.codes.patterns.singleton;
 
 public class SingletonDesign {
 	
-	private static SingletonDesign design;
-
-	public SingletonDesign() {
-		System.out.println("Singleton Object has been created");
-	}
+	public static SingletonDesign singletonDesign;
 	
 	public static SingletonDesign getInstance() {
-		if(design==null) {
-			design= new SingletonDesign();
-			return design;
+		if(singletonDesign==null) {
+			
+			synchronized (SingletonDesign.class) {
+				if(singletonDesign==null) {
+					singletonDesign=new SingletonDesign();
+				}
+			}
+			return singletonDesign;
 		}
-		else
-			return design;
+		return singletonDesign;
 	}
-	  public String getMessage(){
-	        return "Hello "+design.hashCode();
-	    }
-	
-	
-
+	 public String getHelloMessage() {
+		 return "Hello->" +singletonDesign.hashCode();
+	 }
 }
