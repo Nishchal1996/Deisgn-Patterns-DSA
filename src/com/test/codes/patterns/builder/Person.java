@@ -1,7 +1,7 @@
 package com.test.codes.patterns.builder;
 
 public class Person {
-
+//gives choice to decides what do set and also works
 	private int personAge;
 	private String personFirstName;
 	private String personLastName;

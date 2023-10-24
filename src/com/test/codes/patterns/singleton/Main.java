@@ -9,6 +9,7 @@ public class Main {
 		
 		SingletonDesign design2=SingletonDesign.getInstance();
 		System.out.println(design2.getHelloMessage());
+		//It will return single instance will not create other
 	}
 
 }
